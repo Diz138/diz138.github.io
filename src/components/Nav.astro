@@ -1,0 +1,21 @@
+---
+const pathname = Astro.url.pathname;
+
+const linkClass = (href: string) => {
+  const active = pathname === href || (href !== "/" && pathname.startsWith(href));
+  return active
+    ? "text-accent font-semibold"
+    : "text-white hover:text-accent";
+};
+---
+
+<header class="sticky top-0 z-50 border-b border-gray-200 bg-black">
+  <nav class="max-w-4xl mx-auto px-4 py-4 flex items-center gap-6">
+    <a href="/" class="text-lg font-bold tracking-tight text-white hover:text-accent transition-colors">Matthew Dzwil</a>
+
+    <div class="flex items-center gap-4 text-sm">
+      <a href="/experience" class={linkClass("/experience")}>Experience</a>
+      <a href="/projects" class={linkClass("/projects")}>Projects</a>
+    </div>
+  </nav>
+</header>

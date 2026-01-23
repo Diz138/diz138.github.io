@@ -1,0 +1,20 @@
+{
+  "name": "Matthew Dzwil",
+  "roleTitleTop": "SOFTWARE",
+  "roleTitleBottom": "ENGINEER",
+  "summary": "Passionate about building reliable systems and data-driven products. I combine a Data Science (BS/MS) foundation with hands-on software engineering experience, specializing in backend development, Python/Go tooling, and scalable automation/analytics pipelines.",
+  "featureCards": [
+    {
+      "href": "/experience",
+      "kicker": "Experience",
+      "titleLines": ["HPE", "NFL", "Hanover Insurance"],
+      "variant": "slate"
+    },
+    {
+      "href": "/projects",
+      "kicker": "Projects",
+      "titleLines": ["EPL Graphing", "IDK", "IDK"],
+      "variant": "slate"
+    }
+  ]
+}

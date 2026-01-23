@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+
+const { name, avatar, blurb } = Astro.props;
+---
+
+<div class="group relative rounded-[28px] bg-white text-black shadow-xl overflow-hidden">
+  
+  <!-- Image Section -->
+  <div class="relative bg-accent/90">
+    <div class="pointer-events-none absolute -top-16 -left-16 h-48 w-48 rounded-full bg-white/25 blur-2xl"></div>
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-black/0"></div>
+
+    <Image
+      src={avatar}
+      alt={`${name} portrait`}
+      width={420}
+      height={560}
+      loading="eager"
+      class="h-72 w-full object-cover object-[50%_20%] scale-[1.02] transition-transform duration-500 ease-out group-hover:scale-[1.06] group-hover:translate-y-[-2px]"
+    />
+
+    <div class="pointer-events-none absolute inset-0 ring-1 ring-white/15"></div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="relative p-6">
+    <div class="relative z-10">
+      <h2 class="text-2xl text-center font-extrabold tracking-tight text-black">{name}</h2>
+
+      <!-- Icons -->
+      <div class="mt-6 flex items-center justify-center gap-6 items-black/60">
+        <slot name="social" />
+      </div>
+    </div>
+  </div>
+</div>
