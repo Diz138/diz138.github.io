@@ -1,0 +1,50 @@
+---
+interface Props {
+  href: string;
+  kicker: string;
+  titleLines: string[];
+  variant?: "accent" | "slate";
+}
+
+const { href, kicker, titleLines, variant = "accent" } = Astro.props;
+
+const variantClass =
+  variant === "slate"
+    ? "bg-white text-black group-hover:text-accent"
+    : "bg-accent text-white";
+
+const iconBg =
+  variant === "slate"
+    ? "bg-black/10 group-hover:bg-accent/10 text-black group-hover:text-accent"
+    : "bg-white/20 group-hover:bg-white/30";
+---
+
+<a href={href} class={`group relative rounded-2xl overflow-hidden p-6 shadow-lg transition-colors ${variantClass}`}>
+  <div class="flex items-start justify-between gap-4">
+    <div class="text-sm font-semibold opacity-80 transition-all group-hover:opacity-100 group-hover:text-accent">{kicker}</div>
+
+    <!-- Feature Icon -->
+    <span class={`inline-flex h-10 w-10 items-center justify-center rounded-xl transition-colors ${iconBg}`}>
+      <slot name="icon" />
+    </span>
+  </div>
+
+  <!-- Title Lines -->
+  <div class="mt-10 text-xl font-extrabold leading-tight transition-colors group-hover:text-accent">
+    {titleLines.map((line: string) => (
+      <>
+        {line}
+        <br />
+      </>
+    ))}
+  </div>
+
+  <div class="mt-8 flex justify-end">
+    <!-- Call to Action Icon -->
+    <span class={`inline-flex h-10 w-10 items-center justify-center rounded-xl transition-colors ${iconBg}`}>
+      <slot name="ctaIcon" />
+    </span>
+  </div>
+
+  <slot name="background" />
+</a>

@@ -1,0 +1,15 @@
+---
+const {
+  svg, // raw svg string
+  class: className = "",
+  title,
+} = Astro.props;
+---
+
+<span
+  class={`inline-flex items-center justify-center ${className} [&>svg]:h-full [&>svg]:w-full [&_*]:fill-current [&_*]:stroke-current`}
+  aria-label={title}
+  title={title}
+>
+  <Fragment set:html={svg} />
+</span>

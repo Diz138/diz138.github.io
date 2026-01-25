@@ -1,0 +1,35 @@
+---
+import Icon from "./Icon.astro";
+import socials from "../data/socials.json";
+
+import githubSvg from "../assets/icons/github.svg?raw";
+import linkedinSvg from "../assets/icons/linkedin.svg?raw";
+import xSvg from "../assets/icons/x.svg?raw";
+
+interface Props {
+  iconClass?: string;
+  linkClass?: string;
+}
+
+const { iconClass = "h-5 w-5", linkClass = "text-white/60 hover:text-accent transition-colors" } = Astro.props;
+
+const iconMap: Record<string, string> = {
+  github: githubSvg,
+  linkedin: linkedinSvg,
+  x: xSvg,
+};
+---
+
+<div class="flex items-center gap-4">
+  {socials.map((social) => (
+    <a
+      href={social.url}
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label={social.name}
+      class={linkClass}
+    >
+      <Icon svg={iconMap[social.icon]} title={social.name} class={iconClass} />
+    </a>
+  ))}
+</div>

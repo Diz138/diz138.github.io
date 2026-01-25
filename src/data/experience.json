@@ -1,0 +1,56 @@
+[
+  {
+    "company": "Hewlett Packard Enterprise",
+    "logo": "/hpe.png",
+    "title": "Software Engineer II",
+    "location": "Westford, MA",
+    "start": "June 2023",
+    "end": "Present",
+    "bullets": [
+      "Built a secure router-to-router onboarding and mutual authentication flow in Go using challenge–response and asymmetric signing/verification, strengthening trust establishment and mitigating replay and man-in-the-middle risks",
+      "Created an end-to-end Jenkins-driven automation pipeline to validate and publish application-classification RPMs, auto-promoting releases to hosted repos and accelerating cadence from ~1/month to ~1/week",
+      "Helped build a dns caching plugin to accelerate tenant DNS resolution by chaining ingress DNS traffic through a KNI-based service function path to dnsmasq for caching, with support for default system resolvers or custom upstream DNS servers"
+    ],
+    "tools": ["Python", "Go", "Bazel", "Azure", "Jenkins", "Robot"]
+  },
+  {
+    "company": "National Football League",
+    "logo": "/nfl.webp",
+    "title": "Data Science Intern",
+    "location": "Remote",
+    "start": "August 2022",
+    "end": "May 2023",
+    "bullets": [
+      "Designed and implemented scalable data pipelines in Python to process high-frequency NFL Combine player-tracking data into structured, model-ready datasets supporting real-time analytics and visualization of player movement",
+      "Engineered advanced performance metrics from segmented drill movements, leveraging velocity, acceleration, turn dynamics, and burst analysis, to quantify athletic potential across 33 wide receiver prospects",
+      "Identified key predictive features from the combine that help predict WR route execution in live NFL games, enabling NFL teams to assess and evaluate wide receivers more accurately"
+    ],
+    "tools": ["Python", "R"]
+  },
+  {
+    "company": "The Hanover Insurance Group",
+    "logo": "/hanover.png",
+    "title": "Data Engineering Intern",
+    "location": "Worcester, MA",
+    "start": "May 2022",
+    "end": "August 2022",
+    "bullets": [
+      "Deployed multiple real-time ETL pipelines that ingested and processed vendor documents, reducing manual processing time by two hours daily",
+      "Modernized Power BI claims dashboard generation to eliminate manual updates and reduced time spent on reporting by 20+ hours per month"
+    ],
+    "tools": ["SQL", "Power BI", "Tableau"]
+  },
+  {
+    "company": "Worcester Polytechnic Institute",
+    "logo": "/wpi.png",
+    "title": "Data Science Research Intern",
+    "location": "Worcester, MA",
+    "start": "October 2021",
+    "end": "March 2022",
+    "bullets": [
+      "Led data annotation efforts for Named Entity Recognition (NER), labeling personally identifiable information and medical terms to create a high-quality training text message dataset",
+      "Fine-tuned the BERT transformer model in PyTorch using the custom-labeled NER dataset, enabling the automated detection and redaction of HIPAA-sensitive information in patient text messages"
+    ],
+    "tools": ["Python", "PyTorch"]
+  }
+]

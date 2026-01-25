@@ -1,0 +1,32 @@
+---
+import "../styles/global.css";
+import SocialLinks from "../components/SocialLinks.astro";
+
+const { title = "Portfolio", description = "" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+  </head>
+
+  <body class="min-h-screen bg-neutral-950">
+    <slot />
+    <!-- Footer -->
+    <footer class="border-t border-white/10 mt-2 bg-neutral-950">
+      <div class="max-w-4xl mx-auto px-4 py-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-sm text-accent">
+            © {new Date().getFullYear()} Matthew Dzwil · Built with Astro
+          </div>
+          
+          <SocialLinks />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

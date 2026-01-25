@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import projects from "../data/projects.json";
+
+const categories = ["All", "Python", "Fill In"];
+---
+
+<BaseLayout title="Projects | Matthew Dzwil" description="Featured work and creative projects.">
+  <Nav />
+
+  <main class="max-w-7xl mx-auto px-4 py-16">
+    <header class="mb-12">
+      <h1 class="text-3xl font-bold text-gray-900">
+        <span class="text-white">PROJECTS </span>
+      </h1>
+    </header>
+
+    <!-- Filter Tabs -->
+    <div class="flex flex-wrap gap-3 mb-12 border-b border-gray-200 pb-4">
+      {categories.map((category, index) => (
+        <button
+          class={`filter-btn px-6 py-2 text-sm font-medium rounded-lg transition-all ${
+            index === 0 
+              ? 'bg-accent text-white hover:bg-orange-600' 
+              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+          }`}
+          data-category={category}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+      {projects.map((project) => (
+        <div class="project-item animate-fadeIn" data-category={project.category}>
+          <ProjectCard {...project} />
+        </div>
+      ))}
+    </div>
+  </main>
+</BaseLayout>
+
+<!-- Project Selection -->
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectItems = document.querySelectorAll('.project-item');
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const category = button.getAttribute('data-category');
+
+      // Update active button
+      filterButtons.forEach((btn) => {
+        btn.classList.remove('bg-accent', 'text-white', 'hover:bg-orange-600');
+        btn.classList.add('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+      });
+      
+      button.classList.remove('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+      button.classList.add('bg-accent', 'text-white', 'hover:bg-orange-600');
+
+      // Filter projects
+      projectItems.forEach((item) => {
+        const itemCategory = item.getAttribute('data-category');
+        
+        if (category === 'All' || itemCategory === category) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>

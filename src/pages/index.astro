@@ -1,0 +1,178 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Container from "../components/Container.astro";
+import ProfileCard from "../components/ProfileCard.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+
+import avatar from "../assets/avatar.jpg";
+// import avatar from "../assets/fakeProfile.jpg";
+import home from "../data/home.json";
+---
+
+<BaseLayout title={`${home.name} | Portfolio`} description={home.summary}>
+  <Nav />
+
+  <main class="min-h-[calc(100vh-64px)] bg-neutral-950 text-white">
+    <Container class="py-10 sm:py-14 pb-4">
+      <div
+        class="rounded-[28px] border border-white/10 bg-gradient-to-b from-white/5 to-white/[0.02] overflow-hidden"
+      >
+        <div class="p-6 sm:p-10">
+          <div class="grid gap-10 lg:grid-cols-[360px,1fr] items-center justify-items-center lg:justify-items-start">
+            <!-- Left -->
+            <ProfileCard
+              name={home.name}
+              avatar={avatar}
+            >
+              <SocialLinks 
+                slot="social" 
+                iconClass="h-6 w-6" 
+                linkClass="text-black hover:text-accent transition-colors"
+              />
+            </ProfileCard>
+
+            <!-- Right -->
+            <section>
+              <h1
+                class="text-[52px] sm:text-[72px] leading-[0.95] font-extrabold tracking-tight"
+              >
+                {home.roleTitleTop}
+              </h1>
+              <div
+                class="text-[52px] sm:text-[72px] leading-[0.95] font-extrabold tracking-tight text-accent"
+              >
+                {home.roleTitleBottom}
+              </div>
+
+              <p class="mt-6 max-w-xl text-white/60 leading-relaxed">
+                {home.summary}
+              </p>
+
+              <div class="mt-10 grid gap-6 sm:grid-cols-2">
+                <FeatureCard
+                  href={home.featureCards[0].href}
+                  kicker={home.featureCards[0].kicker}
+                  titleLines={home.featureCards[0].titleLines}
+                  variant={home.featureCards[0].variant as "accent" | "slate"}
+                >
+                  <!-- Layers Icon -->
+                  <svg
+                    slot="icon"
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 2 2 7l10 5 10-5-10-5Z"></path>
+                    <path d="m2 17 10 5 10-5"></path>
+                    <path d="m2 12 10 5 10-5"></path>
+                  </svg>
+
+                  <!-- Arrow Icon -->
+                  <svg
+                    slot="ctaIcon"
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M7 17 17 7"></path>
+                    <path d="M7 7h10v10"></path>
+                  </svg>
+
+                  <!-- Background Blur Effect -->
+                  <div
+                    slot="background"
+                    class="pointer-events-none absolute inset-0 opacity-20"
+                  >
+                    <div
+                      class="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-white/30 blur-2xl"
+                    >
+                    </div>
+                  </div>
+                </FeatureCard>
+
+                <FeatureCard
+                  href={home.featureCards[1].href}
+                  kicker={home.featureCards[1].kicker}
+                  titleLines={home.featureCards[1].titleLines}
+                  variant={home.featureCards[1].variant as "accent" | "slate"}
+                >
+                  <!-- Square/Box Icon -->
+                  <svg
+                    slot="icon"
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="5" y="5" width="14" height="14" rx="2"></rect>
+                  </svg>
+
+                  <!-- Arrow Icon -->
+                  <svg
+                    slot="ctaIcon"
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M7 17 17 7"></path>
+                    <path d="M7 7h10v10"></path>
+                  </svg>
+
+                  <!-- Line Chart Background -->
+                  <div
+                    slot="background"
+                    class="pointer-events-none absolute inset-0 opacity-30"
+                  >
+                    <svg
+                      class="absolute inset-0 h-full w-full"
+                      viewBox="0 0 400 200"
+                      preserveAspectRatio="none"
+                    >
+                      <path
+                        d="M0,140 L60,110 L120,150 L180,90 L240,140 L300,70 L360,120 L400,80"
+                        fill="none"
+                        stroke="rgba(0,0,0,0.25)"
+                        stroke-width="6"></path>
+                    </svg>
+                  </div>
+                </FeatureCard>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Me -->
+      <div class="mt-10 rounded-[28px] border border-white/10 bg-gradient-to-b from-white/5 to-white/[0.02] overflow-hidden">
+        <div class="p-6 sm:p-10">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-accent mb-6 text-center">
+            About Me
+          </h2>
+          
+          <div class="space-y-4 text-white/70 leading-relaxed">
+            <p>
+              I am a Software Engineer II at Juniper Networks with a BS/MS in Data Science, driven by building systems that are both secure and operationally reliable. My path has always lived at the intersection of software and data. I started by working hands-on with analytics and pipelines in internships, then moved into networking and distributed systems where correctness, performance, and real-world failure modes matter every day. What motivates me most is turning complex, messy problems into simple, trustworthy products.
+            </p>
+            
+            <p>
+              In my current role I build and ship backend and platform capabilities for SD-WAN networking environments. I enjoy working in Python and Go, and have been enjoying solving problems that touch distributed systems, Linux, CI/CD, and data-driven networking. At HPE, it is crucial to make the right design choices as they make systems observable, debuggable, and resilient.
+            </p>
+            
+            <p>
+              Long term, my goal is to move deeper into applied AI/ML roles where I can pair production-grade engineering with my ML foundation. My graduate work and projects focused on real-world modeling—time-series and sequence learning with LSTMs, and NLP with BERT. Outside of work, I am usually digging into sports analytics projects, experimenting with new ideas in modeling and evaluation, or going for a run.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+    </main>
+</BaseLayout>

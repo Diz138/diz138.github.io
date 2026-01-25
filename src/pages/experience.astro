@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import experience from "../data/experience.json";
+---
+
+<BaseLayout title="Experience | Matthew Dzwil" description="A quick overview of my professional experience and roles held.">
+  <Nav />
+
+  <main class="max-w-4xl mx-auto px-4 py-16">
+    <header>
+      <h1 class="text-3xl font-bold text-accent">Experience</h1>
+      <p class="mt-2 text-white/60">
+        A quick overview of roles and impact.
+      </p>
+    </header>
+
+    <div class="mt-10 space-y-10">
+      {experience.map((job) => (
+        <ExperienceCard {...job} />
+      ))}
+    </div>
+  </main>
+</BaseLayout>

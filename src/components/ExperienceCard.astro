@@ -1,0 +1,63 @@
+---
+interface Props {
+  company: string;
+  title: string;
+  location: string;
+  start: string;
+  end: string;
+  bullets: string[];
+  logo?: string;
+  tools?: string[];
+}
+
+const { company, title, location, start, end, bullets, logo, tools } = Astro.props;
+---
+
+<section class="pl-6 border-l-4 border-accent">
+  <div class="flex items-start gap-4">
+    <!-- Company Logo -->
+    {logo && (
+      <div class="flex-shrink-0">
+        <img 
+          src={logo} 
+          alt={`${company} logo`}
+          class="w-12 h-12 rounded-lg object-contain"
+        />
+      </div>
+    )}
+    
+    <!-- General Information -->
+    <div class="flex-1">
+      <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+        <h2 class="text-xl font-semibold text-white">
+          {title}
+        </h2>
+        <span class="text-sm text-white/60">
+          {start} – {end}
+        </span>
+      </div>
+
+      <p class="mt-1 text-sm text-white/60">
+        {company} · {location}
+      </p>
+
+      <!-- Bullets -->
+      <ul class="mt-4 list-disc pl-5 space-y-2 text-white/80">
+        {bullets.map((bullet) => <li>{bullet}</li>)}
+      </ul>
+
+      <!-- Tools -->
+      {tools && tools.length > 0 && (
+        <div class="mt-6">
+          <div class="flex flex-wrap gap-2">
+            {tools.map((tool) => (
+              <span class="px-3 py-1 text-sm bg-white/10 text-white rounded-full border border-white/20 hover:bg-white/15 transition-colors">
+                {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
