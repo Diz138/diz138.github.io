@@ -7,11 +7,9 @@ interface Props {
   tags: string[];
   codeUrl?: string | null;
   liveUrl?: string | null;
-  figmaUrl?: string | null;
-  previewUrl?: string | null;
 }
 
-const { name, category, description, image, tags, codeUrl, liveUrl, figmaUrl, previewUrl } = Astro.props;
+const { name, category, description, image, tags, codeUrl, liveUrl} = Astro.props;
 ---
 
 <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">

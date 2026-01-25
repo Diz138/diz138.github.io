@@ -21,8 +21,7 @@ To learn more about the folder structure of an Astro project, refer to [their gu
 
 - **Framework:** [Astro](https://astro.build)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
-- **Icons:** [astro-icon](https://www.astroicon.dev)
-- **Language:** TypeScript
+- **Language:** [TypeScript] (https://www.typescriptlang.org)
 
 ## 🧞 Commands
 
