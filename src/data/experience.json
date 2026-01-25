@@ -36,7 +36,7 @@
     "end": "August 2022",
     "bullets": [
       "Deployed multiple real-time ETL pipelines that ingested and processed vendor documents, reducing manual processing time by two hours daily",
-      "Modernized Power BI claims dashboard generation  to eliminate manual updates and reduced time spent on reporting by 20+ hours per month"
+      "Modernized Power BI claims dashboard generation to eliminate manual updates and reduced time spent on reporting by 20+ hours per month"
     ],
     "tools": ["SQL", "Power BI", "Tableau"]
   },
