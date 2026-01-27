@@ -1,32 +1,35 @@
 [
   {
-    "name": "Fill In",
-    "category": "Fill In",
-    "description": "Fill In",
-    "image": "/projects/fillin.png",
-    "tags": ["Python"],
-    "codeUrl": "https://github.com/fillin/fillin",
-    "liveUrl": "https://fillin.demo.com",
-    "previewUrl": null
-  },
-  {
-    "name": "Fill In",
-    "category": "Python",
-    "description": "Fill In",
-    "image": "/projects/fillin.png",
-    "tags": ["Python"],
+    "name": "NFL Rookie Season Performance Prediction",
+    "category": "Statistical Analysis",
+    "description": "Advance player evaluations in the NFL by transforming WR tracking data during the 2022 Scouting Combine into meaningful metrics. To achieve this, we developed a systematic approach to preprocessing data that utilizes specific thresholds to identify and segment drills. Following this, metrics were created on the drills and routes to represent players' movements. Finally, a route prediction model was created.",
+    "image": "/projects/nflHeadquarters.jpeg",
+    "tags": ["Python", "Pandas", "Scikit-Learn", "Jupyter"],
     "codeUrl": null,
     "liveUrl": null,
-    "previewUrl": "https://fillin.preview.com"
+    "previewUrl": "https://digital.wpi.edu/concern/student_works/zc77st302?locale=en",
+    "previewText": "Report"
   },
   {
-    "name": "Fill In",
-    "category": "Fill In",
-    "description": "Fill In",
-    "image": "/projects/fillin.png",
-    "tags": ["Python"],
+    "name": "xTC: Expected Tackle Credit",
+    "category": "Deep Learning",
+    "description": "xTC (Expected Tackle Credit) is a predictive football analytics model that estimates how much 'credit' each defender should receive for a tackle based on tracking data, positioning, and game context. The project adapts xG style modeling to American football, using play-by-play and player movement features to quantify individual defensive contributions on each play.",
+    "image": "/projects/bigDataBowl.png",
+    "tags": ["Python", "Pandas", "Numpy", "XGBoost"],
+    "codeUrl": "https://github.com/edzwil/big-data-bowl-2024/tree/main",
+    "liveUrl": null,
+    "previewUrl": "https://www.kaggle.com/code/matthewdzwil1/xtc-expected-tackle-credit",
+    "previewText": "Kaggle"
+  },
+  {
+    "name": "March Mania Madness: NCAA Bracket Predictor",
+    "category": "Deep Learning",
+    "description": "This project builds a Python-based predictive model for the March Machine Learning Mania 2025 Kaggle competition, using historical NCAA Elo ratings to estimate game win probabilities. After data loading and feature engineering, it trains an XGBClassifier to learn matchup-level patterns and generate calibrated win-probability predictions across the tournament bracket.",
+    "image": "/projects/marchMadness.jpg",
+    "tags": ["Python", "Pandas", "Sequence Modeling", "LSTM"],
     "codeUrl": null,
     "liveUrl": null,
-    "previewUrl": "https://fillin.preview.com"
+    "previewUrl": "https://www.kaggle.com/code/matthewdzwil1/mmm-2025-numbers-never-lie",
+    "previewText": "Kaggle"
   }
 ]

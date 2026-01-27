@@ -7,9 +7,11 @@ interface Props {
   tags: string[];
   codeUrl?: string | null;
   liveUrl?: string | null;
+  previewUrl?: string | null;
+  previewText?: string;
 }
 
-const { name, category, description, image, tags, codeUrl, liveUrl} = Astro.props;
+const { name, category, description, image, tags, codeUrl, liveUrl, previewUrl, previewText = "Preview" } = Astro.props;
 ---
 
 <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
@@ -52,6 +54,19 @@ const { name, category, description, image, tags, codeUrl, liveUrl} = Astro.prop
 
     <!-- Action Buttons -->
     <div class="flex flex-wrap gap-2">
+      {previewUrl && (
+        <a
+          href={previewUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-900 text-sm font-medium rounded-lg border-2 border-gray-900 hover:bg-gray-50 transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+          {previewText}
+        </a>
+      )}
       {codeUrl && (
         <a 
           href={codeUrl}
@@ -65,7 +80,6 @@ const { name, category, description, image, tags, codeUrl, liveUrl} = Astro.prop
           Code
         </a>
       )}
-
       {liveUrl && (
         <a 
           href={liveUrl}
