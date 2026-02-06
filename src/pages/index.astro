@@ -84,15 +84,35 @@ import home from "../data/home.json";
                     <path d="M7 7h10v10"></path>
                   </svg>
 
-                  <!-- Background Blur Effect -->
+                  <!-- Dotted Semicircle Pattern Background -->
                   <div
                     slot="background"
-                    class="pointer-events-none absolute inset-0 opacity-20"
+                    class="pointer-events-none absolute inset-0 opacity-30"
                   >
-                    <div
-                      class="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-white/30 blur-2xl"
+                    <svg
+                      class="absolute inset-0 h-full w-full"
+                      viewBox="0 0 400 400"
+                      preserveAspectRatio="none"
                     >
-                    </div>
+                      <path
+                        d="M 0,400 Q 0,320 80,320 Q 160,320 160,400"
+                        fill="none"
+                        stroke="rgba(0,0,0,0.25)"
+                        stroke-width="6"
+                        stroke-dasharray="15 10"></path>
+                      <path
+                        d="M 0,400 Q 0,280 120,280 Q 240,280 240,400"
+                        fill="none"
+                        stroke="rgba(0,0,0,0.25)"
+                        stroke-width="6"
+                        stroke-dasharray="15 10"></path>
+                      <path
+                        d="M 0,400 Q 0,240 160,240 Q 320,240 320,400"
+                        fill="none"
+                        stroke="rgba(0,0,0,0.25)"
+                        stroke-width="6"
+                        stroke-dasharray="15 10"></path>
+                    </svg>
                   </div>
                 </FeatureCard>
 
