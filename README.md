@@ -1,41 +1,48 @@
-# Matthew Dzwil - Portfolio
+# Hi, I'm Matthew Dzwil 👋
 
-A personal portfolio website built with Astro, Tailwind CSS, and TypeScript. Features a clean, modern design showcasing experience, projects, and professional information.
+I'm a Software Engineer with a BS/MS in Data Science, passionate about building reliable systems and data-driven products. I am currently working at **Hewlett Packard Enterprise** and I love combining engineering rigor with sports analytics on the side.
 
-## 🚀 Project Structure
+- **GitHub:** [Diz138](https://github.com/Diz138)
+- **LinkedIn:** [matthewdzwil](https://www.linkedin.com/in/matthewdzwil)
+- **Twitter/X:** [@DizStats](https://x.com/DizStats)
 
-```text
-/
-├── public/                 # Static assets
-├── src/
-│   ├── assets/            # Images and icons
-│   │   └── icons/
-│   ├── components/        # Reusable Astro components
-│   ├── data/              # JSON data files
-│   ├── layouts/           # Generic Page layouts
-│   ├── pages/             # Routes
+---
 
-To learn more about the folder structure of an Astro project, refer to [their guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Portfolio Site
 
-## 🛠️ Tech Stack
+**Live site:** [diz138.github.io](https://diz138.github.io)
+
+A personal portfolio website showcasing my professional experience, data science projects, and background. Built with Astro, Tailwind CSS, and TypeScript — statically generated and deployed to GitHub Pages.
+
+---
+
+## Tech Stack
 
 - **Framework:** [Astro](https://astro.build)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
-- **Language:** [TypeScript] (https://www.typescriptlang.org)
+- **Language:** [TypeScript](https://www.typescriptlang.org)
+- **Deployment:** [GitHub Pages](https://pages.github.com)
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project:
+## Running Locally
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build the production site to `./dist/`           |
-| `npm run preview`         | Preview the build locally, before deploying      |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+# Install dependencies
+npm install
 
-## 📄 License
+# Start the dev server (http://localhost:4321)
+npm run dev
 
-See [LICENSE](LICENSE) file for details.
+# Build for production (outputs to ./dist/)
+npm run build
+
+# Preview the production build locally
+npm run preview
+```
+
+---
+
+## License
+
+See [LICENSE](LICENSE) for details.
