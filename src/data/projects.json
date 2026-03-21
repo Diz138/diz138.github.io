@@ -1,5 +1,15 @@
 [
   {
+    "name": "SEC Filings RAG Pipeline",
+    "category": "Artificial Intelligence",
+    "description": "A retrieval augmented generation (RAG) pipeline that answers business questions grounded exclusively in SEC EDGAR 10-K and 10-Q filings. The system ingests, chunks, and embeds filing sections into a vector store, retrieves the most relevant excerpts using semantic search, and generates cited answers via Llama 3.3 70B on Groq.",
+    "image": "/projects/sec.svg",
+    "tags": ["Python", "RAG", "LLM", "NLP"],
+    "codeUrl": "https://github.com/Diz138/sec-rag",
+    "liveUrl": null,
+    "previewUrl": null
+  },
+  {
     "name": "NFL Rookie Season Performance Prediction",
     "category": "Statistical Analysis",
     "description": "Advance player evaluations in the NFL by transforming WR tracking data during the 2022 Scouting Combine into meaningful metrics. To achieve this, we developed a systematic approach to preprocessing data that utilizes specific thresholds to identify and segment drills. Following this, metrics were created on the drills and routes to represent players' movements. Finally, a route prediction model was created.",
